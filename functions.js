@@ -37,27 +37,59 @@ function addNewDepartment(connection, mainMenu) {
 
 };
 
-// function allEmployees(connection, mainMenu) {
+function allEmployees(connection, mainMenu) {
 
-//   connection.query("SELECT employee.id, employee.first_name, employee.last_name", (err, res) => {
-//       if (err)
-//           throw err;
+  connection.query("SELECT * FROM employee_info", (err, res) => {
+      if (err)
+          throw err;
 
-//       console.log("\n\n");
-//       console.table(res);
-//       console.log("\n\n");
+      console.log("\n\n");
+      console.table(res);
+      console.log("\n\n");
 
-//       mainMenu();
+      mainMenu();
 
-//   })
+  })
 
-// };
+};
+
+function allDepartments(connection, mainMenu) {
+
+    connection.query("SELECT * FROM department_info", (err, res) => {
+        if (err)
+            throw err;
+  
+        console.log("\n\n");
+        console.table(res);
+        console.log("\n\n");
+  
+        mainMenu();
+  
+    })
+  
+  };
+
+  function allEmployeeRoles(connection, mainMenu) {
+
+    connection.query("SELECT * FROM role_info", (err, res) => {
+        if (err)
+            throw err;
+  
+        console.log("\n\n");
+        console.table(res);
+        console.log("\n\n");
+  
+        mainMenu();
+  
+    })
+  
+  };
 
 module.exports = {
 
-  // allEmployees: allEmployees,
-  // allDepartments: allDepartments,
-  // allEmployeeRoles: allEmployeeRoles,
+  allEmployees: allEmployees,
+  allDepartments: allDepartments,
+  allEmployeeRoles: allEmployeeRoles,
   // addNewEmployee: addNewEmployee,
   addNewDepartment: addNewDepartment
   // addNewEmployeeRole: addNewEmployeeRole,
