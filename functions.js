@@ -374,7 +374,7 @@ function removeEmployee(connection, mainMenu) {
     });
 };
 
-
+//
 
 function removeDepartment(connection, mainMenu) {
 
